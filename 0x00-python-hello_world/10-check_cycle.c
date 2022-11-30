@@ -1,6 +1,6 @@
 int check_cycle(listint_t *list)
 {
-	listint_t *p;
+	listint_t *p2;
 	listint_t *prev;
 
 	p2 = list;
