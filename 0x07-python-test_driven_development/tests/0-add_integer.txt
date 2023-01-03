@@ -1,15 +1,61 @@
-#!/usr/bin/python3
-"""Defines an integer addition function."""
+A test to for adding two inteter
 
+Import Python module + collections
+>>> import sys
+>>> sys.path.insert(1, '../')
+>>> lib = __import__("0-add_integer")
+>>> add_integer = lib.add_integer
 
-def add_integer(a, b=98):
-    """Return the integer addition of a and b.
-    Float arguments are typecasted to ints before addition is performed.
-    Raises:
-        TypeError: If either of a or b is a non-integer and non-float.
-    """
-    if ((not isinstance(a, int) and not isinstance(a, float))):
-        raise TypeError("a must be an integer")
-    if ((not isinstance(b, int) and not isinstance(b, float))):
-        raise TypeError("b must be an integer")
-    return (int(a) + int(b))
+# Normal addition test
+>>> add_integer(0)
+98
+>>> add_integer(-1)
+97
+>>> add_integer(10.5)
+108
+
+# Type Errors
+>>> add_integer(10+5j)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer([])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer({})
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(set())
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer("")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# Two input addition type errors
+>>> add_integer(10, 10+5j)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, [])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, {})
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, set())
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(10, "")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
