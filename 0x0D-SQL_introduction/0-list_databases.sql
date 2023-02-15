@@ -1,1 +1,1 @@
-Didi
+SHOW DATABASES;
